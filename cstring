@@ -1,0 +1,91 @@
+cstring adalah urutan karakter yang disimpan pada blok memori berurtan seperti aray dan diakhiri karakter null, karakter string
+dapat mencakup huruf,angka, dan simbol khusus seperti +,-,*,{},[], dll. string juga biasanya disebut kumpulan dari char
+
+contoh deklarasi dan inisialisasi cstring
+#include <iostream>
+using namespace std;
+
+int main(){
+  char nama[15] = "rizki";
+  char prodi[] = "ilkom";
+  
+  cout << nama << endl;
+  cout << sizeof(nama) << endl;
+  
+  cout << prodi << endl;
+  cout << sizeof(prodi) << endl;
+  
+  for (int i = 0; i < sizeof(prodi); i++)
+    cout << prodi[i] << " " << (prodi[i] == '\0'? "Null" : "not null") << endl;
+}
+
+input pada cstring
+1) cin.get() dan cin.ignore()
+#include <iostream>
+using namespace std;
+
+int main(){
+  char nama[15];
+  char npm[10];
+  
+  cin.get(nama,15);
+  cin.get(npm,10);
+  
+  cout << "nama : " << nama << endl;
+  cout << "npm : " << npm << endl;
+}
+berikut dapat di isi, namun ketika ingin mengisi npm tidak bisa, oleh karena itu digunakan ignore
+#include <iostream>
+using namespace std;
+
+int main(){
+  char nama[15];
+  char npm[10];
+  
+  cin.get(nama,15);
+  cin.ignore();
+  cin.get(npm,10);
+  
+  cout << "nama : " << nama << endl;
+  cout << "npm : " << npm << endl;
+  
+2) cin.putback()
+#include <ioistream>
+using namespace std;
+
+int main(){
+  char karakter;
+  while (cin.get(karakter)){
+    if(karakter == 'a')
+      cin.putback('x');
+    else
+      cout << karakter;
+  }
+ }
+ 
+fungsi untuk memanipulasi cstring
+#include <cstring>
+1) strlen()
+contoh
+#include <iostream>
+#incldue <cstring>
+using namespace std;
+
+int main(){
+  char str[] = {'i','l','k','o','m','p','\0'};
+  
+  cout << str << endl;
+  cout <<strlen(str) << endl;
+}
+pada contoh strlen, kita membuat variabel char str[] lalu kita tampilkan ukuran dari karakter str dengan fungsi strlen() dari library cstring.
+
+2) strcat()
+#include <iostream>
+#incldue <cstring>
+using namespace std;
+
+int main(){
+  char firstname[50] = "rizki" ;
+  char lastname[50] = "mahesa";
+  char *fullname = strcat(firstname, lastname);
+  cout << fullname;
