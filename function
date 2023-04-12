@@ -1,0 +1,56 @@
+function adalah bahasa c++ sebuah blok kode program yang ditulis untuk melakukan suatu 
+tindakan atau mengembalikan nilai tertentu ketika dipanggil dari program utama
+
+contoh:
+#include <iostream>
+using namespace std;
+
+int tambah (int a, int b){
+  return a + b;
+}
+
+int main(){
+  int x = 5, y = 7, hasil;
+  hasil = tambah (x,y);
+  
+  cout << "hasil penjumlahan " << x << " dan " << y << hasil << endl;
+}
+
+studi kasus
+rezadboy sebagai siswa kelas 6 sd yang mendapatkan tugas absen dan menghitung luas bangun datar, rezadboy terkenal dengan kemalasannya
+namun dia merupakan programmer di umurnya ke 12. untuk mengerjakan tugas menghitung luas, ia ingin membuat program dengan c++
+
+#include <iostream>
+#incldue <cmath>
+using namespace std;
+
+double luaslingkaran(double r){
+    double pi = M_PI;
+    return pi*r*r;
+}
+
+int main (){
+    double r;
+    cin >> r;
+    cout << "luas lingkaran : " << luaslingkaran(r);
+    
+    return 0;
+    
+membuat prosedur absen
+#include <iostream>
+using namespace std;
+
+void absen (string nama, int npm){
+    cout << nama << "_" << npm;
+}
+
+int main(){
+  string nama;
+  int npm;
+  
+  getline(cin,nama);
+  cin >> npm;
+  
+  absen(nama,npm);
+  return 0;
+}
