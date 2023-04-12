@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Box { //mendefinisikan class yang terdapat yaitu Box
+  public: //menggunakan public agar dapat mendefinisi dengan int main
+      double lebar;
+      double alas;
+      double tinggi;
+};
+
+int main(){
+Box Box1; //mendeklarasi Box1 pada class Box
+Box Box2; //mendeklarasi Box2 pada class Box
+
+constructor
+#include <iostream>
+using namespace std;
+
+class line{
+    public:
+      void setLength(double len);
+      double getLenghth(void);
+      line();
+    private:
+      double length;
+};
+
+line::line(void){
+    cout<< "object is created" << endl;
+}
+void line::setlength(double len){
+    length =len;
+}
+double line::getlength(void){
+    return length;
+}
+
+int main(){
+    line line;
+    line.setLength(6.0);
+    cout << "length of line " <<line.getlength() << endl;
